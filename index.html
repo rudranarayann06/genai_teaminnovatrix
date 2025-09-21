@@ -6,28 +6,38 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <!-- Logo -->
-    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="32" cy="32" r="30" fill="#6a1b9a" opacity="0.2"/>
-      <path d="M20 44 L32 16 L44 44 Z" fill="#6a1b9a"/>
-    </svg>
-    <h1>CraftConnect</h1>
-  </header>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#6a1b9a" opacity="0.2"/>
+        <path d="M20 44 L32 16 L44 44 Z" fill="#6a1b9a"/>
+      </svg>
+      <span>CraftConnect</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#tourist">Tourist Mode</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <div class="login-btn">
+      <button onclick="showLogin()">Login</button>
+    </div>
+  </nav>
 
-  <section>
+  <!-- Sections -->
+  <section id="home">
     <h2>Voice Onboarding (Demo)</h2>
     <button onclick="startOnboarding()">🎤 Start Voice Onboarding</button>
     <div id="onboardingOutput" class="output"></div>
   </section>
 
-  <section>
+  <section id="features">
     <h2>YouTuber & Influencer Collaboration</h2>
     <button onclick="generatePromo()">Generate Promo Script</button>
     <div id="promoOutput" class="output"></div>
-  </section>
 
-  <section>
     <h2>3-Way Buyer–Craftsman Connection</h2>
     <button onclick="directConnect()">Direct Connect (Like Ola)</button><br>
     <button onclick="platformAssist()">Platform-Assisted Sale</button><br>
@@ -35,20 +45,31 @@
     <div id="connectionOutput" class="output"></div>
   </section>
 
-  <section>
+  <section id="tourist">
     <h2>Tourist Mode – Find Local Artisans</h2>
     <input type="text" id="locationInput" placeholder="Enter location (e.g. Jaipur)">
     <button onclick="findArtisans()">Find</button>
     <div id="locationOutput" class="output"></div>
   </section>
 
-  <section>
+  <section id="about">
     <h2>About Our Artisans</h2>
     <p>
       Our artisans mostly work in <b>small workshops, homes, or community clusters</b>.  
       Very few are factory-based. Each product is <b>authentic, handmade, and culturally rich</b>.
     </p>
   </section>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLogin()">&times;</span>
+      <h2>Login</h2>
+      <input type="text" placeholder="Enter Email"><br>
+      <input type="password" placeholder="Enter Password"><br>
+      <button onclick="alert('Login Successful (Demo)')">Submit</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
